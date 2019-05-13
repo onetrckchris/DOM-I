@@ -39,4 +39,16 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+let nav = document.querySelectorAll('nav a');
+let navCount = 1;
+
+nav.forEach(element => {
+  element.style.fontSize = '1rem';
+  element.style.color = 'slategrey';
+  element.textContent = siteContent['nav'][`nav-item-${navCount}`];
+  navCount++;
+});
+
+
