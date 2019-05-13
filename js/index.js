@@ -56,20 +56,20 @@ let navCount = 1;
 // This will iterate through the nav which is a NodeList and add styling and content to each a tag in the nav.
 navContent.forEach(element => {
   element.textContent = siteContent['nav'][`nav-item-${navCount}`];
-  element.style.color = 'green';
+  element.style.color = 'purple';
   navCount++;
 });
 
 // STRETCH: Adding 2 new itmes to the nav.
 let appendItem = document.createElement('a');
 appendItem.setAttribute('href', '#');
-appendItem.style.color = 'green';
+appendItem.style.color = 'purple';
 appendItem.textContent = 'Append';
 nav.appendChild(appendItem);
 
 let prependItem = document.createElement('a');
 prependItem.setAttribute('href', '#');
-prependItem.style.color = 'green';
+prependItem.style.color = 'purple';
 prependItem.textContent = 'Prepend'
 nav.prepend(prependItem);
 
@@ -81,7 +81,10 @@ let awesomeButton = document.querySelector('.cta button');
 awesomeButton.textContent = siteContent['cta']['button'];
 
 let awesomeImg = document.querySelector('.cta img');
-awesomeImg.setAttribute('src', siteContent['cta']['img-src'])
+awesomeImg.setAttribute('src', siteContent['cta']['img-src']);
+awesomeImg.addEventListener('click', (event) => {
+  event.target.setAttribute('src', './img/circle.png');
+});
 
 // This is adding content to main-content.
 let textContentH4 = document.querySelectorAll('.text-content h4');
