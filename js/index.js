@@ -42,20 +42,21 @@ const siteContent = {
   },
 };
 
-// Example: Update the img src for the logo
+// Example: Update the img src for the logo.
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
+// This is going to select the whole nav.
 let nav = document.querySelectorAll('nav a');
 let navCount = 1;
 
+// This will iterate through the nav which is a NodeList and add styling and content to each a tag in the nav.
 nav.forEach(element => {
-  element.style.fontSize = '1rem';
-  element.style.color = 'slategrey';
   element.textContent = siteContent['nav'][`nav-item-${navCount}`];
   navCount++;
 });
 
+// These add content to the existing elements inside of header.
 let awesomeH1 = document.querySelector('.cta h1');
 awesomeH1.textContent = siteContent['cta']['h1'];
 
@@ -64,6 +65,41 @@ awesomeButton.textContent = siteContent['cta']['button'];
 
 let awesomeImg = document.querySelector('.cta img');
 awesomeImg.setAttribute('src', siteContent['cta']['img-src'])
-console.log(awesomeButton)
 
+// This is adding content to main-content... So ugly.
+let featuresH4 = document.querySelectorAll('.text-content')[0].querySelector('h4');
+featuresH4.textContent = siteContent['main-content']['features-h4'];
+let featuresContent = document.querySelectorAll('.text-content')[0].querySelector('p');
+featuresContent.textContent = siteContent['main-content']['features-content'];
 
+let aboutH4 = document.querySelectorAll('.text-content')[1].querySelector('h4');
+aboutH4.textContent = siteContent['main-content']['about-h4'];
+let aboutContent = document.querySelectorAll('.text-content')[1].querySelector('p');
+aboutContent.textContent = siteContent['main-content']['about-content'];
+
+let servicesH4 = document.querySelectorAll('.text-content')[2].querySelector('h4');
+servicesH4.textContent = siteContent['main-content']['services-h4'];
+let servicesContent = document.querySelectorAll('.text-content')[2].querySelector('p');
+servicesContent.textContent = siteContent['main-content']['services-content'];
+
+let productH4 = document.querySelectorAll('.text-content')[3].querySelector('h4');
+productH4.textContent = siteContent['main-content']['product-h4'];
+let productContent = document.querySelectorAll('.text-content')[3].querySelector('p');
+productContent.textContent = siteContent['main-content']['product-content'];
+
+let visionH4 = document.querySelectorAll('.text-content')[4].querySelector('h4');
+visionH4.textContent = siteContent['main-content']['vision-h4'];
+let visionContent = document.querySelectorAll('.text-content')[4].querySelector('p');
+visionContent.textContent = siteContent['main-content']['vision-content'];
+
+// Inputting the src for the middle image.
+let mainImage = document.querySelector('.middle-img');
+mainImage.setAttribute('src', siteContent['main-content']['middle-img-src']);
+
+let contactH4 = document.querySelector('.contact h4');
+contactH4.textContent = siteContent['contact']['contact-h4'];
+
+let contactContent = document.querySelectorAll('.contact p');
+contactContent[0].textContent = siteContent['contact']['address'];
+contactContent[1].textContent = siteContent['contact']['phone'];
+contactContent[2].textContent = siteContent['contact']['email'];
