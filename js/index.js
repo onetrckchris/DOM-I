@@ -16,13 +16,18 @@ const siteContent = {
   "main-content": {
     "features-h4":"Features",
     "features-content": "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+
     "about-h4":"About",
     "about-content": "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+
     "middle-img-src": "img/mid-page-accent.jpg",
+    
     "services-h4":"Services",
     "services-content": "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+
     "product-h4":"Product",
     "product-content": "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    
     "vision-h4":"Vision",
     "vision-content": "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
   },
@@ -50,5 +55,15 @@ nav.forEach(element => {
   element.textContent = siteContent['nav'][`nav-item-${navCount}`];
   navCount++;
 });
+
+let awesomeH1 = document.querySelector('.cta h1');
+awesomeH1.textContent = siteContent['cta']['h1'];
+
+let awesomeButton = document.querySelector('.cta button');
+awesomeButton.textContent = siteContent['cta']['button'];
+
+let awesomeImg = document.querySelector('.cta img');
+awesomeImg.setAttribute('src', siteContent['cta']['img-src'])
+console.log(awesomeButton)
 
 
